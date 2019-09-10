@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PBP Tugas-1</title>
+    <script src="res/fontawesome-all.js"></script>
+    <link rel="stylesheet" href="res/bulma.min.css">
+    <style>
+        .logo {
+            position: absolute;
+            width: 210px;
+            height: auto;
+            left: 50%;
+            top: 5%;
+            transform: translate(-50%, 0%);
+        }
+
+        .center {
+            position: absolute;
+            width: 545px;
+            height: 360px;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+        }
+
+        .scale-up-ver-center {
+            -webkit-animation: scale-up-ver-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-ver-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+
+        @keyframes scale-up-ver-center {
+            0% {
+                opacity: 0;
+                transform: scaleY(0.4) translate(-50%, -50%);
+            }
+
+            50% {
+                opacity: 0;
+                transform: scaleY(0.4) translate(-50%, -50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scaleY(1) translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <figure class="logo">
+        <img src="res/logo.png">
+    </figure>
+    <div class="box has-background-danger center scale-up-ver-center">
+        <h2 class="subtitle has-text-centered">Daftar Ulang Mahasiswa</h2>
+        <hr style="background-color:yellow;">
+        <form action="/berhasil" method="POST">
+            <div class="field">
+                <label class="label">Nama Lengkap</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="c/o Erlangga Ibrahim" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">NIM</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="c/o alexsmith@gmail.com" required>
+                    <!-- Saya Buat tipe Text karena khawatir ada NIM yang berawalan angka 0 -->
+                </div>
+            </div>
+            <br>
+            <div class="buttons is-right">
+                <input class="button is-large" type="submit" value="Daftar Ulang">
+            </div>
+        </form>
+    </div>
+</body>
