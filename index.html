@@ -14,22 +14,23 @@
             width: 210px;
             height: auto;
             left: 50%;
-            top: 5%;
+            top: 11%;
             transform: translate(-50%, 0%);
         }
 
         .center {
             position: absolute;
             width: 545px;
-            height: 360px;
+            /* height: 390px; */
+            height: auto;
             left: 50%;
             top: 55%;
             transform: translate(-50%, -50%);
         }
 
         .scale-up-ver-center {
-            -webkit-animation: scale-up-ver-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            animation: scale-up-ver-center 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            -webkit-animation: scale-up-ver-center 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-ver-center 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         }
 
         @keyframes scale-up-ver-center {
@@ -52,28 +53,41 @@
 </head>
 
 <body>
-    <figure class="logo">
+    <figure class="logo scale-up-ver-center">
         <img src="res/logo.png">
     </figure>
     <div class="box has-background-danger center scale-up-ver-center">
         <h2 class="subtitle has-text-centered">Daftar Ulang Mahasiswa</h2>
         <hr style="background-color:yellow;">
-        <form action="/berhasil" method="POST">
+        <form action="berhasil.php" method="POST">
             <div class="field">
-                <label class="label">Nama Lengkap</label>
+                <label class="label has-text-white">Nama Lengkap</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="c/o Erlangga Ibrahim" required>
+                    <input class="input" type="text" placeholder="c/o Erlangga Ibrahim" name="name_input" required>
                 </div>
             </div>
 
             <div class="field">
-                <label class="label">NIM</label>
+                <label class="label has-text-white">NIM</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="c/o alexsmith@gmail.com" required>
+                    <input class="input" type="text" placeholder="c/o 672017282" name="nim_input" required>
                     <!-- Saya Buat tipe Text karena khawatir ada NIM yang berawalan angka 0 -->
                 </div>
             </div>
+
+            <div class="control">
+                <label class="radio has-text-white">
+                    <input type="radio" name="gender_radio" value="pria" checked>
+                    Pria
+                </label>&emsp;
+                <label class="has-text-white">
+                    <input type="radio" name="gender_radio" value="wanita">
+                    Wanita
+                </label>
+            </div>
+
             <br>
+
             <div class="buttons is-right">
                 <input class="button is-large" type="submit" value="Daftar Ulang">
             </div>
