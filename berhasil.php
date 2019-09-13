@@ -87,12 +87,14 @@
                                     <p>
                                         <strong>Administrasi UKSW</strong> <small>@infoBaraUKSW</small> <small>31m</small>
                                         <br>
-                                        Anda telah berhasil terdaftar sebagai <?php echo $jk . " " . $prodi ?>
+                                        Anda telah berhasil terdaftar sebagai <?php echo $jk . " " . $prodi . ", angkatan '" .  $nim[4] . $nim[5] ?>
                                     </p>
                                 </div>
                             </div>
                         </article>
                     </div>
+                    <?php if ($digit_prodi == "67") {
+                        echo '
                     <div class="box">
                         <article class="media">
                             <figure class="media-left">
@@ -111,6 +113,7 @@
                             </div>
                         </article>
                     </div>
+                    '; } ?>
                 </div>
             </div>
             <div class="column">
@@ -125,7 +128,7 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Nomer Induk Mahasiswa</label>
+                        <label class="label">Nomor Induk Mahasiswa</label>
                         <div class="control">
                             <input class="input" type="text" value="<?php echo $nim ?>" disabled>
                         </div>
@@ -134,6 +137,18 @@
                         <label class="label">Program Studi</label>
                         <div class="control">
                             <input class="input" type="text" value="<?php echo $prodi ?>" disabled>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Nomor Urut Pendaftaran</label>
+                        <div class="control">
+                            <input class="input" type="number" value="<?php echo $nim[6] . $nim[7] . $nim[8] ?>" disabled>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Tahun Angkatan</label>
+                        <div class="control">
+                            <input class="input" type="number" value="<?php echo $digit_angkatan ?>" disabled>
                         </div>
                     </div>
                     <div class="field">
